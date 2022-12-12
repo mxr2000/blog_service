@@ -1,0 +1,15 @@
+version: 0.2
+
+phases:
+  pre_build:
+    commands:
+      - echo pre build...
+  build:
+    commands:
+      - ./gradlew build
+  post_build:
+    commands:
+      - echo after build...
+artifacts:
+  files: '**/*'
+  discard-paths: no
