@@ -11,5 +11,6 @@ phases:
     commands:
       - echo after build...
 artifacts:
-  files: './build/libs/blog.jar'
-  discard-paths: no
+  files:
+    - 'build/libs/blog.jar'
+  discard-paths: yes
