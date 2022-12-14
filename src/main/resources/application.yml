@@ -3,6 +3,6 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: 123456
-    url: jdbc:mysql://127.0.0.1:3306/blog
+    username: admin
+    password: Boynextdoor123
+    url: jdbc:mysql://blog.cx4tqduywofq.us-east-1.rds.amazonaws.com:3306/blog
