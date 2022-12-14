@@ -1,14 +1,28 @@
+buildscript {
+    ext {
+        springBootVersion = '2.6.1'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+}
+
 plugins {
     id 'java'
     id 'org.springframework.boot' version '2.6.1'
     id 'io.spring.dependency-management' version '1.0.15.RELEASE'
 }
 
+apply plugin: 'java'
+
 group = 'edu.virginia.cs'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
-jar {
+/*jar {
     manifest {
         attributes "Main-Class": "edu.virginia.cs.blog.BlogServiceApplication"
     }
@@ -20,6 +34,14 @@ jar {
     from {
         configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
     }
+}*/
+
+
+
+
+bootJar {
+    baseName = "blog"
+    version = "0.1"
 }
 
 configurations {
