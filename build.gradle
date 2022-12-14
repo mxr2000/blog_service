@@ -8,6 +8,20 @@ group = 'edu.virginia.cs'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '17'
 
+jar {
+    manifest {
+        attributes "Main-Class": "edu.virginia.cs.blog.BlogServiceApplication"
+    }
+
+    archiveName 'blog.jar'
+
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}
+
 configurations {
     compileOnly {
         extendsFrom annotationProcessor
